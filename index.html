@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hamza Portfolio</title>
+  <title>Portfolio - Hamza</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Add in <head> -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<meta name="description" content="Hamza's portfolio – UI/UX, Web Design, Branding & Development">
+<meta name="keywords" content="Hamza, UI/UX Designer, Web Developer, Portfolio, Pakistan">
+<meta name="author" content="Hamza">
+
   <style>
     body {
       background-color: #121212;
@@ -14,9 +20,6 @@
     }
     .navbar {
       background-color: #1f1f1f;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
     .hero {
       padding: 100px 0;
@@ -39,22 +42,41 @@
       color: #fff;
     }
     .card:hover {
-      background: linear-gradient(135deg, #00ff99, #00ccff);
+      background-color: #00ff99;
       color: #000;
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
     }
     .section-title {
       color: #00ff99;
       margin-bottom: 40px;
       text-align: center;
     }
+    .card:hover {
+  background: linear-gradient(135deg, #00ff99, #00ccff);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+}
+
     footer {
       background-color: #1a1a1a;
       padding: 40px 0;
       text-align: center;
       color: #aaa;
     }
+   
+
+  html {
+    scroll-behavior: smooth;
+  }
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -142,78 +164,135 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
   <section class="py-5">
-    <div class="container">
-      <h2 class="section-title">Happy Clients Say</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="card p-4 text-center">
-            <img src="https://via.placeholder.com/80" class="rounded-circle mb-3" alt="Client">
-            <h5>Dave Melrose</h5>
-            <p class="fst-italic">“Hamza’s design work elevated our brand. His attention to detail and creativity are unmatched.”</p>
-          </div>
+  <div class="container">
+    <h2 class="section-title">Happy Clients Say</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4 text-center">
+          <img src="https://via.placeholder.com/80" class="rounded-circle mb-3" alt="Client">
+          <h5>Dave Melrose</h5>
+          <p class="fst-italic">“Hamza’s design work elevated our brand. His attention to detail and creativity are unmatched.”</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Pricing Section -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="section-title">Pricing Plans</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card p-4 text-center">
-            <h5>Basic</h5>
-            <h3>$29</h3>
-            <p>1 Page Design<br>Responsive Layout<br>Email Support</p>
-            <a href="#" class="btn btn-custom">Get Started</a>
-          </div>
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Pricing Plans</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <h5>Basic</h5>
+          <h3>$29</h3>
+          <p>1 Page Design<br>Responsive Layout<br>Email Support</p>
+          <a href="#" class="btn btn-custom">Get Started</a>
         </div>
-        <div class="col-md-4">
-          <div class="card p-4 text-center">
-            <h5>Advanced</h5>
-            <h3>$49</h3>
-            <p>Up to 5 Pages<br>Custom UI/UX<br>Priority Support</p>
-            <a href="#" class="btn btn-custom">Get Started</a>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <h5>Advanced</h5>
+          <h3>$49</h3>
+          <p>Up to 5 Pages<br>Custom UI/UX<br>Priority Support</p>
+          <a href="#" class="btn btn-custom">Get Started</a>
         </div>
-        <div class="col-md-4">
-          <div class="card p-4 text-center">
-            <h5>Ultimate</h5>
-            <h3>$99</h3>
-            <p>Unlimited Pages<br>Full Branding<br>Dedicated Support</p>
-            <a href="#" class="btn btn-custom">Get Started</a>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <h5>Ultimate</h5>
+          <h3>$99</h3>
+          <p>Unlimited Pages<br>Full Branding<br>Dedicated Support</p>
+          <a href="#" class="btn btn-custom">Get Started</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Newsletter Section -->
-  <section class="py-5 bg-dark text-center">
-    <div class="container">
-      <h2 class="section-title">Stay Up to Date</h2>
-      <p class="mb-4">Subscribe to the free newsletter for design tips and updates.</p>
-      <form class="row justify-content-center">
-        <div class="col-md-6">
-          <input type="email" class="form-control mb-3" placeholder="Enter your email">
-          <button type="submit" class="btn btn-custom w-100">Subscribe</button>
+<section class="py-5 bg-dark text-center">
+  <div class="container">
+    <h2 class="section-title">Stay Up to Date</h2>
+    <p class="mb-4">Subscribe to the free newsletter for design tips and updates.</p>
+    <form class="row justify-content-center">
+      <div class="col-md-6">
+        <input type="email" class="form-control mb-3" placeholder="Enter your email">
+        <button type="submit" class="btn btn-custom w-100">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Latest News & Blogs</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Design Trends 2025</h5>
+          <p class="text-muted">Sep 1, 2025</p>
+          <p>Explore the latest UI/UX patterns that are dominating the web.</p>
+          <a href="#" class="btn btn-sm btn-custom">Read More</a>
         </div>
-      </form>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>How to Build Trust with Design</h5>
+          <p class="text-muted">Aug 28, 2025</p>
+          <p>Learn how testimonials, layout, and branding impact conversions.</p>
+          <a href="#" class="btn btn-sm btn-custom">Read More</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Elementor vs Webflow</h5>
+          <p class="text-muted">Aug 20, 2025</p>
+          <p>A deep dive into which platform suits your workflow best.</p>
+          <a href="#" class="btn btn-sm btn-custom">Read More</a>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section class="py-5">
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-custom">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+  <!-- Footer -->
+  <footer>
     <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <form class="row g-3">
-        <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Your Name" required>
-        </div>
-        <div class="col-md-6">
-          <input type="email" class="form-control" placeholder="Your Email" required>
-        </div>
-       
+      <p>© 2025 Hamza Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Add before </body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
