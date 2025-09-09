@@ -284,6 +284,236 @@ form .btn-custom {
     align-items: center;
 }
 
+
+:root{
+  --bg: #f7f8f9;
+  --surface: #ffffff;
+  --text: #040B0C;
+  --muted: #6b7785;
+  --accent: #FF6F00;
+  --border: #e6e8eb;
+  --radius: 16px;
+  --shadow: 0 12px 32px rgba(4, 11, 12, 0.10);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--text); background:var(--bg);}
+
+.contact-section{
+  padding: clamp(40px, 6vw, 96px) 20px;
+}
+
+.contact-container{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;
+}
+
+.contact-form-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 3vw, 36px);
+}
+
+.contact-title{
+  margin: 0 0 6px;
+  font-size: clamp(22px, 2.4vw, 32px);
+  letter-spacing: -0.02em;
+}
+
+.contact-subtitle{
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.975rem;
+}
+
+.contact-form{
+  display: block;
+}
+
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field{
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input, textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.98rem;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .06s ease;
+}
+
+input::placeholder, textarea::placeholder{
+  color: #9aa3ab;
+}
+
+input:focus, textarea:focus{
+  border-color: color-mix(in srgb, var(--accent) 35%, #00ff99);
+  box-shadow: 0 0 0 4px rgba(132, 252, 132, 0.16);
+}
+
+input:active, textarea:active{
+  transform: translateY(0.5px);
+}
+
+.field-hint{
+  min-height: 18px;
+  font-size: 0.8rem;
+  color: #b44a00;
+  margin-top: 6px;
+}
+
+.btn-submit{
+  appearance: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 12px 18px;
+  background: #00ff99;
+  color: #000;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(129, 255, 133, 0.35);
+  transition: transform .08s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.btn-submit:hover{ box-shadow: 0 10px 28px rgba(255, 111, 0, 0.45); }
+.btn-submit:active{ transform: translateY(1px); }
+
+.icon-envelope{
+  transition: transform .25s ease;
+}
+.btn-submit:hover .icon-envelope{
+  transform: translateX(2px) rotate(3deg);
+}
+
+.privacy-note{
+  margin: 12px 2px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Right visual */
+.contact-visual{
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #fafbfc);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3vw, 28px);
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.avatar-3d{
+  width: min(92%, 460px);
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(4, 11, 12, 0.15));
+  animation: floatY 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes floatY{
+  0%,100%{ transform: translateY(0) }
+  50%{ transform: translateY(-8px) }
+}
+
+.float-badges{
+  position: absolute;
+  inset: 16px 16px auto auto;
+  display: grid;
+  gap: 10px;
+}
+
+.badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 20px rgba(4, 11, 12, 0.10);
+  transform: translateZ(0);
+}
+
+.badge svg{ color: var(--accent) }
+
+.badge-availability{
+  justify-content: center;
+}
+.badge-availability .dot{
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(34,197,94,0.15);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .contact-container{
+    grid-template-columns: 1fr;
+  }
+  .contact-visual{
+    order: 2;
+    min-height: 360px;
+  }
+  .form-row{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Optional dark mode (auto) */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b0f11;
+    --surface: #0f1417;
+    --text: #e8eef2;
+    --muted: #9fb0be;
+    --border: #1e262b;
+  }
+  .contact-visual{
+    background: linear-gradient(180deg, #0f1417, #0b0f11);
+    border: 1px dashed var(--border);
+  }
+  .badge{ background: #11181c }
+  input, textarea{ background: #0f1417 }
+}
+
+
   </style>
 </head>
 <body>
@@ -308,40 +538,69 @@ form .btn-custom {
     </div>
   </nav>
 
-<section class="py-5 h-full">
-  <div class="container ">
-    <h2 class="section-title text-center mb-5">Get In Touch</h2>
-    <div class="row align-items-center">
-      
-      <!-- Left Side: Contact Form -->
-      <div class="col-md-6">
-        <form class="row g-3">
-          <div class="col-12">
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <!-- Left: Contact Form -->
+    <div class="contact-form-card">
+      <h2 class="contact-title">Let’s work together</h2>
+      <p class="contact-subtitle">Tell me about your project and I’ll get back within 24 hours.</p>
+
+      <form class="contact-form" method="post" action="https://formspree.io/f/xrbarjqy" novalidate>
+        <div class="form-row">
+          <div class="form-field">
             <label for="name">Your Name</label>
-            <input type="text" class="form-control" placeholder="Enter Name" required>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required aria-required="true" />
+            <span class="field-hint" aria-live="polite"></span>
           </div>
-          <div class="col-12">
-            <label for="email">Your Email</label>
-            <input type="email" class="form-control" placeholder="Enter Email" required>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" />
+            <span class="field-hint" aria-live="polite"></span>
           </div>
-          <div class="col-12">
-            <label for="Message">Message</label>
-            <textarea class="form-control" rows="5" placeholder="type here" required></textarea>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-custom w-100">Send Message</button>
-          </div>
-        </form>
-      </div>
+        </div>
 
-      <!-- Right Side: Image -->
-      <div class="col-md-6 text-center">
-        <img src="call-center_24877-49053-fotor-bg-remover-20250909102944.png" alt="Contact Illustration" class="img-fluid rounded shadow">
-      </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Let’s build something great..." required aria-required="true"></textarea>
+          <span class="field-hint" aria-live="polite"></span>
+        </div>
 
+        <button type="submit" class="btn-submit">
+          <span>Send message</span>
+          <svg class="icon-envelope" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+          </svg>
+        </button>
+
+        <p class="privacy-note">I respect your inbox. No spam—ever.</p>
+      </form>
     </div>
+
+    <!-- Right: 3D Contact Visual -->
+    <aside class="contact-visual" aria-hidden="true">
+      <!-- Replace src with your exported transparent PNG/WebP of the 3D avatar -->
+      <img
+        class="avatar-3d"
+        src="Copilot_20250909_151435-removebg-preview.png"
+        alt="Hamza 3D avatar for contact"
+      />
+
+      <!-- Floating contact cues -->
+      <div class="float-badges">
+        <div class="badge badge-mail">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+          <span>Contact</span>
+        </div>
+        <div class="badge badge-availability">
+          <span class="dot"></span>
+          <span>Available</span>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
+
 
 
   <!-- Footer -->
