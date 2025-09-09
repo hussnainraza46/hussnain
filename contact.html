@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hussnain Raza</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Add in <head> -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<meta name="description" content="Hamza's portfolio – UI/UX, Web Design, Branding & Development">
+<meta name="keywords" content="Hamza, UI/UX Designer, Web Developer, Portfolio, Pakistan">
+<meta name="author" content="Hamza">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .navbar {
+      background-color: #1f1f1f;
+    }
+    .hero {
+      
+      height: 70vh;
+      text-align: center;
+      background-color: #1a1a1a;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    .hero .sideImage{
+      width: 40%;
+
+    }
+
+    .hero .container{
+      width: 100%;
+        display: flex;
+      align-items: center;
+    }
+
+    .hero{
+      background-image: url(portfolio-bg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+    }
+    .sideImage img{
+      width: 100%;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      text-align: left;
+      font-weight: 600;
+      color: #00ff99;
+    }
+    .container{
+      text-align: left;
+    }
+    .footer p{
+      text-align: center;
+    }
+    .lead{
+      text-align: left;
+    }
+    .btn-custom {
+      background-color: #00ff99;
+      color: #000;
+      border: none;
+    }
+    .btn-custom:hover {
+      background-color: #00ff99;
+      color: #000;
+      border: none;
+    }
+    .card {
+      background-color: #1f1f1f;
+      border: none;
+      transition: all 0.3s ease;
+      color: #fff;
+      text-align: center !important;
+    }
+    .card:hover {
+      background-color: #00ff99;
+      color: #000;
+      transform: scale(1.05);
+    }
+    .section-title {
+      color: #00ff99;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .card:hover {
+  background: linear-gradient(135deg, #00ff99, #00ccff);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+}
+
+    footer {
+      background-color: #1a1a1a;
+      padding: 40px 0;
+      text-align: center;
+      color: #aaa;
+    }
+   
+
+  html {
+    scroll-behavior: smooth;
+  }
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-custom{
+  
+    
+    text-align: center;
+}
+.nav-item .btn-contact{
+  background-color: #00ff99;
+    color: #000;
+    padding: 12px 10px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+@media (min-width: 768px) {
+  .btn-contact{
+  background-color: #00ff99;
+    color: #000;
+    padding: 8px 10px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    width: 100px;
+}
+}
+.navbar-nav{
+  gap: 20px;
+}
+h1 span{
+  color: #fff;
+}
+.my-imge {
+  height: 50vh;
+  border-radius: 50%;
+}
+.my-imge img{
+  filter: drop-shadow(2px 6px 9px #00ff99);
+  height: 344px;
+  
+}
+.row{
+  align-items: center;
+}
+
+.left-side{
+  width: 50%;
+}
+/* Popup Overlay */
+.popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.popup-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Popup Heading */
+.popup-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form Styling */
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.popup-content input,
+.popup-content textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.3s;
+}
+.popup-content input:focus,
+.popup-content textarea:focus {
+  border-color: #00ff99;
+}
+.popup-content textarea {
+  resize: none;
+  min-height: 100px;
+}
+.popup-content button {
+  padding: 12px;
+  background: #00ff99;
+  border: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.popup-content button:hover {
+  background: #00ff99;
+}
+
+
+.section-title {
+  color: #00ff99;
+  font-weight: 600;
+}
+
+form .form-control {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px 12px;
+}
+
+form .form-control::placeholder {
+  color: #aaa;
+}
+
+form .btn-custom {
+  background-color: #00ff99;
+  color: #000;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 12px 12px;
+}
+.h-full{
+  
+    align-items: center;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Hussnain</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about-me">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#service">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <a class="btn-contact nav-link" href="contact.html">Contact</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<section class="py-5 h-full">
+  <div class="container ">
+    <h2 class="section-title text-center mb-5">Get In Touch</h2>
+    <div class="row align-items-center">
+      
+      <!-- Left Side: Contact Form -->
+      <div class="col-md-6">
+        <form class="row g-3">
+          <div class="col-12">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" placeholder="Enter Name" required>
+          </div>
+          <div class="col-12">
+            <label for="email">Your Email</label>
+            <input type="email" class="form-control" placeholder="Enter Email" required>
+          </div>
+          <div class="col-12">
+            <label for="Message">Message</label>
+            <textarea class="form-control" rows="5" placeholder="type here" required></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-custom w-100">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Side: Image -->
+      <div class="col-md-6 text-center">
+        <img src="call-center_24877-49053-fotor-bg-remover-20250909102944.png" alt="Contact Illustration" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer">
+      <p>© 2025 Hamza Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Add before </body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById("hireBtn").onclick = function() {
+    document.getElementById("contactPopup").style.display = "flex";
+  };
+  document.querySelector(".close").onclick = function() {
+    document.getElementById("contactPopup").style.display = "none";
+  };
+  window.onclick = function(e) {
+    if (e.target == document.getElementById("contactPopup")) {
+      document.getElementById("contactPopup").style.display = "none";
+    }
+  };
+
+  </script>
+
+</body>
+</html>
