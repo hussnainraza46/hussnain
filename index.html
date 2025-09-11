@@ -259,6 +259,34 @@ h1 span{
   width: 750px;
 }
 
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLogos 40s linear infinite;
+}
+
+.logo-img {
+  height: 60px;
+  margin: 0 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
   </style>
 </head>
@@ -389,6 +417,30 @@ h1 span{
       </div>
     </div>
   </section>
+<!-- Logo Carousel Section -->
+<section class="py-5 bg-dark">
+  <div class="container">
+    <h2 class="text-center mb-4">Websites I've Built</h2>
+    <div class="logo-marquee">
+      <div class="logo-track">
+        <!-- Repeat logos -->
+        <img src="b1.png" alt="Logo 1" class="logo-img">
+        <img src="Group 40161.png" alt="Logo 2" class="logo-img">
+        <img src="logo-white.png" alt="Logo 3" class="logo-img">
+        <img src="white-logo-medcallz.svg" alt="Logo 4" class="logo-img">
+        <img src="Black-White-Minimalist-Aesthetic-Initials-Font-Logo-3-1.png" alt="Logo 5" class="logo-img">
+        <!-- Repeat again for seamless loop -->
+        <img src="INTELTICA-NEW-LOGO-1024x1024.webp" alt="Logo 1" class="logo-img">
+        <img src="b1.png" alt="Logo 2" class="logo-img">
+        <img src="Group 40161.png" alt="Logo 3" class="logo-img">
+        <img src="white-logo-medcallz.svg" alt="Logo 4" class="logo-img">
+        <img src="Black-White-Minimalist-Aesthetic-Initials-Font-Logo-3-1.png" alt="Logo 5" class="logo-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <section class="py-5" id="blog">
   <div class="container">
@@ -404,6 +456,7 @@ h1 span{
     </div>
   </div>
 </section>
+
 
 
 <section class="py-5">
