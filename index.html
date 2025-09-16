@@ -33,6 +33,8 @@
       width: 100%;
       justify-content: center;
     }
+
+    
     .hero .sideImage{
       width: 40%;
 
@@ -142,7 +144,10 @@
 
 }
 
+ 
+
 @media (min-width: 768px) {
+ 
   .btn-contact{
   background-color: #00ff99;
     color: #000;
@@ -220,6 +225,19 @@ h1 span{
   animation: fadeIn 0.4s ease-in-out;
 }
 
+
+
+@media (max-width: 768px){
+
+  .hero{
+    height: 46vh;
+
+  }
+  .left-side{
+    width: 69%;
+  }
+}
+
 /* Fade In Animation */
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(-20px);}
@@ -284,9 +302,7 @@ h1 span{
   background: #00ff99;
 }
 
-.contact-home{
-  width: 750px;
-}
+
 
 .logo-marquee {
   overflow: hidden;
@@ -312,6 +328,22 @@ h1 span{
   transform: scale(1.1);
 }
 
+ .navbar-brand img {
+    height: 84px;
+    width: 110px;
+    color: #fff;
+}
+
+@media (max-width: 991px){
+  .navbar-brand img {
+    height: 79px;
+    width: 86px;
+    color: #fff;
+}
+}
+
+
+
 @keyframes scrollLogos {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -324,7 +356,7 @@ h1 span{
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Hussnain</a>
+      <a class="navbar-brand " href="index.html"><img src="Copilot_hussnain.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
