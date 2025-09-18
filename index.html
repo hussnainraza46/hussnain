@@ -48,10 +48,11 @@
 
     .hero{
       background-color: #000;
-      background-image: url(realbg-3d.png);
+      background-image: url(suit-pic-removebg-preview.png);
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: 1200px;
       background-size: contain;
+    
 
     }
     .sideImage img{
@@ -343,6 +344,63 @@ h1 span{
 }
 }
 
+@media (max-width: 669px){
+  .banner-container{
+    width: 100%;
+
+  }
+  .banner-container .left-side{
+    width: 100%;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .left-side h1{
+    width: 100%;
+    text-align: center;
+  }
+  .left-side p{
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+}
+
+
+.my-imge {
+  position: relative;
+  display: inline-block;
+}
+
+.my-imge::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,153,0.3), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* behind image */
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -52%) scale(1.1); }
+}
+
+.my-imge img {
+  border-radius: 50%;
+}
+
+
+.text-muted{
+  color: #aaa !important;
+}
 
 
 @keyframes scrollLogos {
@@ -376,7 +434,7 @@ h1 span{
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
+    <div class="container banner-container">
       <div class="left-side">
         <h1>IMAGINATION <span> IS MORE IMPORTANT THAN KNOWLEDGE</span></h1>
         <p class="lead"> <i>“I build websites that don’t just 
@@ -385,9 +443,7 @@ h1 span{
       <a href="Mirza-Hussnain.pdf" download="Mirza-Hussnain.pdf" class="btn btn-custom mt-3">Download CV</a>
       </div>
       
-      <div class="sideImage">
-      <img src="my-self-removebg-preview.png" alt="">
-    </div>
+      
     </div>
     
   </section>
@@ -396,21 +452,22 @@ h1 span{
   <div class="container">
     <h2 class="section-title">About Me</h2>
     <div class="row">
-      <div class="col-md-6">
-        <p>Hi, I’m <u><b>HUSSNAIN RAZA</b> </u> a WordPress & front-end developer from Pakistan. I create modern,
+      <div class="col-md-6 px-5 text-center">
+        <p class="text-center">Hi, I’m <u><b>HUSSNAIN RAZA</b> </u> a WordPress & front-end developer from Pakistan. I create modern,
            responsive websites using HTML, CSS, JavaScript, Bootstrap, and TailwindCSS. 
           From landing pages and portfolios to WooCommerce stores and custom themes,
-           I deliver pixel-perfect, user-friendly designs that drive results.
+           I deliver pixel-perfect, user-friendly designs that drive results.</p>
+        <a href="javascript:void(0)" id="hireBtn" class="btn btn-custom mt-3">Hire Me</a>
       </div>
       <div class="my-imge col-md-6 text-center">
-        <img src="my-image-portfolio-removebg-preview.png" alt="Hamza" class="img-fluid rounded">
+        <img src="another-suit-pic-removebg-preview.png" alt="Hamza" class="img-fluid rounded">
       </div>
     </div>
   </div>
 </section>
 
   <!-- Services Section -->
-  <section class="py-5" id="service">
+  <section class="py-5 px-3" id="service">
     <div class="container">
       <h2 class="section-title">Services</h2>
       <div class="row g-4">
@@ -441,7 +498,7 @@ h1 span{
   </section>
 
   <!-- Projects Section -->
-  <section class="py-5" id="project">
+  <section class="py-5 px-3" id="project">
     <div class="container">
       <h2 class="section-title">Latest Projects</h2>
       <div class="row g-4">
@@ -505,56 +562,114 @@ h1 span{
 
 
 
-  <section class="py-5" id="blog">
+  <section class="py-5" id="clients">
   <div class="container">
-    <h2 class="section-title">Happy Clients Say</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card p-4 text-center">
-          <img src="https://via.placeholder.com/80" class="rounded-circle mb-3" alt="Client">
-          <h5>Dave Melrose</h5>
-          <p class="fst-italic">“Hussnain's design work elevated our brand. His attention to detail and creativity are unmatched.”</p>
+    <h2 class="section-title text-center mb-5">Happy Clients Say</h2>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active text-center">
+          
+          <h5>Sarah Khan</h5>
+          <p class="text-muted">CEO, Brandify</p>
+          <p class="fst-italic">“Professional and reliable — my website traffic doubled!”</p>
         </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item text-center">
+          
+          <h5>Michael Lee</h5>
+          <p class="text-muted">Founder, VetCare</p>
+          <p class="fst-italic">“Clean, fast, and user-friendly design. Highly recommend Hussnain.”</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item text-center">
+          
+          <h5>Ayesha Malik</h5>
+          <p class="text-muted ">Marketing Head, Medcallz</p>
+          <p class="fst-italic">“Delivered on time and beyond expectations!”</p>
+        </div>
+
       </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
   </div>
 </section>
 
 
 
-<section class="py-5">
+
+<section class="py-5 bg-dark" id="pricing">
   <div class="container">
-    <h2 class="section-title">Pricing Plans</h2>
+    <h2 class="section-title text-center mb-5">Pricing Plans</h2>
     <div class="row g-4">
+      
+      <!-- Basic Plan -->
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h5>Basic</h5>
-          <h3>$29</h3>
-          <p>1 Page Design<br>Responsive Layout<br>Email Support</p>
-          <a href="#" class="btn btn-custom">Get Started</a>
+        <div class="card h-100 text-center p-4 shadow">
+          <h4>Basic</h4>
+          <h2 class="text-success">$100</h2>
+          <ul class="list-unstyled my-3">
+            <li>✔ 1-5 Page WordPress Website</li>
+            <li>✔ Basic Shopify Store (upto 5 products)</li>
+            <li>✔ Responsive Design</li>
+            <li>✔ Free Theme Setup</li>
+            <li>✔ Contact Form Integration</li>
+          </ul>
+          <a href="#contact" class="btn btn-success">Choose Plan</a>
         </div>
       </div>
+
+      <!-- Standard Plan -->
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h5>Advanced</h5>
-          <h3>$49</h3>
-          <p>Up to 5 Pages<br>Custom UI/UX<br>Priority Support</p>
-          <a href="#" class="btn btn-custom">Get Started</a>
+        <div class="card h-100 text-center p-4 shadow border-primary">
+          <h4>Standard</h4>
+          <h2 class="text-primary">$350</h2>
+          <ul class="list-unstyled my-3">
+            <li>✔ 5-10 Page WordPress Website</li>
+            <li>✔ Shopify Store (upto 20 products)</li>
+            <li>✔ Custom Theme Tweaks</li>
+            <li>✔ Speed Optimization</li>
+            <li>✔ Payment Gateway Integration</li>
+            <li>✔ 1 Month Free Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Choose Plan</a>
         </div>
       </div>
+
+      <!-- Premium Plan -->
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h5>Ultimate</h5>
-          <h3>$99</h3>
-          <p>Unlimited Pages<br>Full Branding<br>Dedicated Support</p>
-          <a href="#" class="btn btn-custom">Get Started</a>
+        <div class="card h-100 text-center p-4 shadow border-danger">
+          <h4>Premium</h4>
+          <h2 class="text-danger">$500</h2>
+          <ul class="list-unstyled my-3">
+            <li>✔ Full Shopify / WordPress eCommerce Store</li>
+            <li>✔ Unlimited Pages & Products</li>
+            <li>✔ Premium / Custom Theme Design</li>
+            <li>✔ Advanced SEO Optimization</li>
+            <li>✔ Custom Features (Blog, Membership etc.)</li>
+            <li>✔ 3 Months Free Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-danger">Choose Plan</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="py-5 bg-dark text-center">
+
+<section class="py-5 px-3 bg-dark text-center">
   <div class="container">
     <h2 class="section-title">Stay Up to Date</h2>
     <p class="mb-4 text-center">Subscribe to the free newsletter for design tips and updates.</p>
@@ -568,40 +683,56 @@ h1 span{
 </section>
 
 
-<section class="py-5">
+<section class="py-5" id="blog">
   <div class="container">
-    <h2 class="section-title">Latest News & Blogs</h2>
+    <h2 class="section-title text-center mb-5">Latest Blog</h2>
     <div class="row g-4">
+
+      <!-- Blog 1 -->
       <div class="col-md-4">
-        <div class="card p-4">
-          <h5>Design Trends 2025</h5>
-          <p class="text-muted">Sep 1, 2025</p>
-          <p>Explore the latest UI/UX patterns that are dominating the web.</p>
-          <a href="#" class="btn btn-sm btn-custom">Read More</a>
+        <div class="card h-100 shadow">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" class="card-img-top" alt="Shopify Store">
+          <div class="card-body">
+            <h5 class="card-title">How to Build a Shopify Store in 2025</h5>
+            <p class="card-text">Step-by-step guide for beginners to create a fully functional Shopify store...</p>
+            <a href="https://www.shopify.com/blog/how-to-start-online-store" target="_blank" class="btn btn-outline-primary btn-sm">Read More</a>
+          </div>
         </div>
       </div>
+
+      <!-- Blog 2 -->
       <div class="col-md-4">
-        <div class="card p-4">
-          <h5>How to Build Trust with Design</h5>
-          <p class="text-muted">Aug 28, 2025</p>
-          <p>Learn how testimonials, layout, and branding impact conversions.</p>
-          <a href="#" class="btn btn-sm btn-custom">Read More</a>
+        <div class="card h-100 shadow">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" class="card-img-top" alt="WordPress Plugins">
+          <div class="card-body">
+            <h5 class="card-title">Top 5 WordPress Plugins for eCommerce</h5>
+            <p class="card-text">These essential plugins will help boost your online store performance...</p>
+            <a href="https://www.wpbeginner.com/showcase/must-have-wordpress-plugins-and-tools-for-business-websites/" target="_blank" class="btn btn-outline-primary btn-sm">Read More</a>
+          </div>
         </div>
       </div>
+
+      <!-- Blog 3 -->
       <div class="col-md-4">
-        <div class="card p-4">
-          <h5>Elementor vs Webflow</h5>
-          <p class="text-muted">Aug 20, 2025</p>
-          <p>A deep dive into which platform suits your workflow best.</p>
-          <a href="#" class="btn btn-sm btn-custom">Read More</a>
+        <div class="card h-100 shadow">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" class="card-img-top" alt="Why WordPress">
+          <div class="card-body">
+            <h5 class="card-title">Why Choose WordPress for Business Websites?</h5>
+            <p class="card-text">Discover the benefits of WordPress for small and medium-sized businesses...</p>
+            <a href="https://kinsta.com/blog/what-is-wordpress/" target="_blank" class="btn btn-outline-primary btn-sm">Read More</a>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
-<section class="py-5" id="contact">
+
+
+
+<section class="py-5 px-3" id="contact">
   <div class="container contact-home">
     <h2 class="section-title">Get In Touch</h2>
     <form class="row g-3" method="post" action="https://formspree.io/f/xrbarjqy">
