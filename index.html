@@ -735,20 +735,30 @@ h1 span{
 <section class="py-5 px-3" id="contact">
   <div class="container contact-home">
     <h2 class="section-title">Get In Touch</h2>
-    <form class="row g-3" method="post" action="https://formspree.io/f/xrbarjqy">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Your Name" required>
-      </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Your Email" required>
-      </div>
-      <div class="col-12">
-        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-      </div>
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-custom">Send Message</button>
-      </div>
-    </form>
+   <!-- Popup form (or anywhere) -->
+<form id="contactForm" class="row g-3">
+  <div class="col-12">
+    <input id="name" name="name" type="text" class="form-control" placeholder="Your Name" required>
+  </div>
+  <div class="col-12">
+    <input id="email" name="email" type="email" class="form-control" placeholder="Your Email" required>
+  </div>
+  <div class="col-12">
+    <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+  </div>
+
+  <!-- optional hidden fields -->
+  <input type="hidden" name="_subject" value="New contact from portfolio">
+  <input type="hidden" name="_replyto" id="_replyto" value="">
+
+  <div class="col-12 text-center">
+    <button id="sendBtn" type="submit" class="btn btn-custom">Send Message</button>
+  </div>
+</form>
+
+<!-- Feedback placeholders -->
+<div id="formStatus" style="display:none;margin-top:12px;"></div>
+
   </div>
 </section>
 
@@ -793,6 +803,82 @@ h1 span{
       document.getElementById("contactPopup").style.display = "none";
     }
   };
+
+
+(function() {
+    const endpoint = "https://formspree.io/f/xrbarjqy"; // aapka Formspree form endpoint
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+    const sendBtn = document.getElementById("sendBtn");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      // collect values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // simple validation
+      if (!name || !email || !message) {
+        showStatus("Please fill all fields.", true);
+        return;
+      }
+
+      // disable button while sending
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending...";
+
+      // build JSON payload (Formspree accepts this)
+      const payload = {
+        name: name,
+        email: email,
+        message: message,
+        _subject: "New contact from portfolio",
+        _replyto: email
+      };
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(()=>({}));
+
+        if (res.ok) {
+          showStatus("Message sent successfully — thank you!", false);
+          form.reset();
+          // close popup if you want:
+          const popup = document.getElementById("contactPopup");
+          if (popup) popup.style.display = "none";
+        } else {
+          // Formspree returns useful error messages sometimes
+          const errMsg = (data && data.error) ? data.error : "Failed to send message. Please try again.";
+          showStatus("Error: " + errMsg, true);
+        }
+      } catch (err) {
+        showStatus("Network error. Please try again.", true);
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send Message";
+      }
+    });
+
+    function showStatus(msg, isError) {
+      statusEl.style.display = "block";
+      statusEl.textContent = msg;
+      statusEl.style.color = isError ? "#ff6b6b" : "#00ff99";
+      // hide after 6s
+      setTimeout(()=> { statusEl.style.display = "none"; }, 6000);
+    }
+  })();
 
   </script>
 

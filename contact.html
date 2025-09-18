@@ -629,6 +629,66 @@ input:active, textarea:active{
     }
   };
 
+
+
+
+  (function() {
+    const endpoint = "https://formspree.io/f/xrbarjqy"; // your Formspree endpoint
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+    const sendBtn = document.getElementById("sendBtn");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      // collect values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        showStatus("⚠️ Please fill all fields.", true);
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.innerHTML = "Sending...";
+
+      const payload = { name, email, message, _replyto: email };
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          showStatus("✅ Message sent successfully! Thank you.", false);
+          form.reset();
+        } else {
+          showStatus("❌ Something went wrong. Please try again.", true);
+        }
+      } catch (err) {
+        showStatus("❌ Network error. Please check connection.", true);
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = `
+          <span>Send message</span>
+          <svg class="icon-envelope" width="22" height="22" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+          </svg>`;
+      }
+    });
+
+    function showStatus(msg, isError) {
+      statusEl.textContent = msg;
+      statusEl.style.color = isError ? "#ff4444" : "#00cc66";
+    }
+  })();
   </script>
 
 </body>
