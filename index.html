@@ -402,6 +402,26 @@ h1 span{
   color: #aaa !important;
 }
 
+.skill-badge {
+    display: inline-block;
+    background-color: #fff;   /* Bootstrap primary blue */
+    color: #000;
+    font-size: 1rem;             /* Slightly bigger text */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;         /* pill shape */
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .skill-badge:hover {
+    background-color: #00ff99;
+    color: #000;   /* hover color */
+    transform: scale(1.1);       /* zoom effect */
+  }
+  .my-pic img{
+    filter: drop-shadow(2px 3px 5px #00ff99);
+  }
 
 @keyframes scrollLogos {
   0% { transform: translateX(0); }
@@ -447,24 +467,58 @@ h1 span{
     </div>
     
   </section>
-
-  <section class="py-5" id="about-me">
+<!-- about us -->
+<!-- About Section -->
+<section class="py-5 bg-dark" id="about">
   <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <div class="row">
-      <div class="col-md-6 px-5 text-center">
-        <p class="text-center">Hi, I’m <u><b>HUSSNAIN RAZA</b> </u> a WordPress & front-end developer from Pakistan. I create modern,
-           responsive websites using HTML, CSS, JavaScript, Bootstrap, and TailwindCSS. 
-          From landing pages and portfolios to WooCommerce stores and custom themes,
-           I deliver pixel-perfect, user-friendly designs that drive results.</p>
-        <a href="javascript:void(0)" id="hireBtn" class="btn btn-custom mt-3">Hire Me</a>
+    <div class="row align-items-center">
+      
+      <!-- Profile Image -->
+      <div class="col-md-5 my-pic text-center mb-4 mb-md-0">
+        <img src="another-suit-pic-removebg-preview.png" alt="Profile Image" class="img-fluid rounded shadow-lg" style="max-width: 350px;">
       </div>
-      <div class="my-imge col-md-6 text-center">
-        <img src="another-suit-pic-removebg-preview.png" alt="Hamza" class="img-fluid rounded">
+
+      <!-- About Content -->
+      <div class="col-md-7">
+        <h2 class="section-title fw-bold">About Me</h2>
+        <h2 class="fw-bold text-white">WordPress & Front-end Developer</h2>
+          <p class="text-white mt-3">
+            Hello! I’m <b>HUSSNAIN RAZA</b>, a passionate WordPress and Front-end Developer from Pakistan. 
+            I specialize in building modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, 
+            Bootstrap, and TailwindCSS. Whether it’s a portfolio, business site, or WooCommerce store, I focus on 
+            creating pixel-perfect designs that deliver results.
+          </p>
+          <p class="text-white">
+            With over 2 years of professional experience, I’ve worked on diverse projects ranging from small 
+            business websites to complex web applications. My goal is to combine clean code with intuitive 
+            UI/UX design to craft seamless digital experiences.
+          </p>
+
+         <a href="javascript:void(0)" id="hireBtn" class="btn btn-custom mt-3">Hire Me</a>
+        <!-- Skill Tags -->
+        <div class="mt-4">
+          <span class="skill-badge me-2 mb-2">WordPress & shopify </span>
+          <span class="skill-badge me-2 mb-2">HTML</span>
+          <span class="skill-badge me-2 mb-2">CSS</span>
+         
+          <span class="skill-badge me-2 mb-2">JavaScript</span>
+          <span class="skill-badge me-2 mb-2">React</span>
+          <span class="skill-badge me-2 mb-2">Bootstrap</span>
+          <span class="skill-badge me-2 mb-2">Responsive Design</span>
+          <span class="skill-badge me-2 mb-2">TailwindCSS</span>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
+
+
+
+
+
+
+ 
 
   <!-- Services Section -->
   <section class="py-5 px-3" id="service">
