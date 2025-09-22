@@ -48,13 +48,28 @@
 
     .hero{
       background-color: #000;
-      background-image: url(suit-pic-removebg-preview.png);
-      background-repeat: no-repeat;
+      
       background-position: 1200px;
       background-size: contain;
     
 
     }
+    .banner-container{
+      background-image: url(suit-pic-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    /* mobile view (≤ 768px) */
+@media (max-width: 768px) {
+  .banner-container {
+    background: none !important; /* image hat jaegi */
+    background-color: #fff;      /* optional plain color */
+  }
+}
+
+
+
     .sideImage img{
       width: 100%;
     }
@@ -459,6 +474,7 @@ h1 span{
   <section class="hero">
     <div class="container banner-container">
       <div class="left-side">
+        <h1>HELLO I'M HUSSNAIN </h1>
         <h1>IMAGINATION <span> IS MORE IMPORTANT THAN KNOWLEDGE</span></h1>
         <p class="lead"> <i>“I build websites that don’t just 
         look good—they work hard for your brand.”</i> 
