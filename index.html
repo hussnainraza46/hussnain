@@ -32,13 +32,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <style>
     body {
 
       background-color: #121212;
       color: #fff;
-      font-family: 'Open Sans', sans-serif;
+      font-family: "Montserrat", sans-serif;
     }
     .navbar {
       background-color: #1f1f1f;
@@ -235,7 +235,7 @@ h1 span{
 }
 
 .left-side{
-  width: 50%;
+  width: 59%;
 }
 /* Popup Overlay */
 .popup {
@@ -266,7 +266,11 @@ h1 span{
 @media (max-width: 768px){
 
   .hero{
-    height: 46vh;
+    height: 64vh;
+    background-image: url(3d-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
   }
   .left-side{
@@ -464,6 +468,38 @@ h1 span{
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.navbar-nav .btn-contact{
+  display: none;
+}
+.navbar-collapse{
+  flex-grow: 0 !important;
+}
+
+.navbar-collapse .navbar-nav .btn-contact{
+  display: none;
+  width: 100% !important;
+}
+ 
+@media (max-width: 991px){
+  .main-between .btn-contact{
+    display: none;
+  }
+  .left-side {
+    width: 69%;
+}
+.navbar-collapse .navbar-nav .btn-contact{
+  display: block;
+  width: 100% !important;
+}
+}
+.client-sect{
+      height: 50vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+
 
   </style>
 </head>
@@ -471,7 +507,7 @@ h1 span{
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
+    <div class="container main-between d-flex justify-content-between">
       <a class="navbar-brand " href="index.html"><img src="Copilot_hussnain.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
@@ -486,6 +522,7 @@ h1 span{
           <a class="btn-contact nav-link" href="contact.html">Contact</a>
         </ul>
       </div>
+      <a class="btn-contact nav-link" href="contact.html">Contact</a>
     </div>
   </nav>
 
@@ -656,7 +693,7 @@ h1 span{
 
 
 
-  <section class="py-5" id="clients">
+  <section class="py-5 client-sect" id="clients">
   <div class="container">
     <h2 class="section-title text-center mb-5">Happy Clients Say</h2>
 
